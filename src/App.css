@@ -1,38 +1,107 @@
+
+
 .App {
-  text-align: center;
+  height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App > h1 {
+  margin-bottom: 50px;
+  font-size: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  padding: 0 50px 50px 50px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+}
+
+.form > p {
+  align-self: flex-start;
+  margin: 10px 0 0 0;
+  color: red;
+  font-size: 12px;
+  max-width: 300px;
+}
+
+.form--input {
+  width: 100%;
+  margin-top: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form--submit {
+  width: 60%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 50px;
   color: white;
+  background-color: #639;
+  border: none;   
+  cursor: pointer; 
 }
 
-.App-link {
-  color: #61dafb;
+.form--submit:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-img {
+  display: flex;
+  justify-items: space-between;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.img-desc {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img-wrap:hover .img-desc {
+  visibility: visible;
+  opacity: 1;
 }
